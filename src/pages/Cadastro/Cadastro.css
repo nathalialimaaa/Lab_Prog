@@ -11,16 +11,16 @@
   text-align: center;
 }
 
-.form-group {
+.cadastro-container .form-group {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.cadastro-container .form-group label {
   display: block;
   margin-bottom: 5px;
 }
 
-.form-group input {
+.cadastro-container .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -28,7 +28,7 @@
   border-radius: 4px;
 }
 
-button[type="submit"] {
+.cadastro-container button[type="submit"] {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -39,16 +39,16 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
-button[type="submit"]:hover {
+.cadastro-container button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.links {
+.cadastro-container .links {
   margin-top: 15px;
   text-align: center;
 }
 
-.links a {
+.cadastro-container .links a {
   color: #007bff;
   text-decoration: none;
   font-size: 14px;

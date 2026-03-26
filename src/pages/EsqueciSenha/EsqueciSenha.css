@@ -18,16 +18,16 @@
   margin-bottom: 20px;
 }
 
-.form-group {
+.recuperar-container .form-group {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.recuperar-container .form-group label {
   display: block;
   margin-bottom: 5px;
 }
 
-.form-group input {
+.recuperar-container .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -35,7 +35,7 @@
   border-radius: 4px;
 }
 
-button[type="submit"] {
+.recuperar-container button[type="submit"] {
   width: 100%;
   padding: 10px;
   background-color: #28a745;
@@ -46,16 +46,16 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
-button[type="submit"]:hover {
+.recuperar-container button[type="submit"]:hover {
   background-color: #218838;
 }
 
-.links {
+.recuperar-container .links {
   margin-top: 15px;
   text-align: center;
 }
 
-.links a {
+.recuperar-container .links a {
   color: #007bff;
   text-decoration: none;
   font-size: 14px;
