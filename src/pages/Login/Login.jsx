@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 import "./Login.css";
 
 const Login = () => {
   // Estados para armazenar as entradas do usuário
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const { login } = useContext(AuthContext); // Obtém a função de login do contexto
 
   // Função que é chamada quando o formulário é enviado
   const handleSubmit = (event) => {
@@ -17,8 +18,8 @@ const Login = () => {
     // Faz o console log das credenciais do usuário
     console.log("Dados de Login:", { username, password });
     
-    // Redireciona para a home
-    navigate("/home");
+    // Chama o login do contexto passando as credenciais
+    login(username, password);
   };
 
   return (

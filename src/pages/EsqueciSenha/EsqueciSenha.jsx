@@ -13,13 +13,13 @@ const EsqueciSenha = () => {
   return (
     <div className="recuperar-container">
       <h2>Esqueci a Senha</h2>
-      <p>Digite seu email para receber um link de recuperação.</p>
+      <p>Digite seu email abaixo e enviaremos instruções para criar uma nova senha</p>
       <form onSubmit={handleRecuperar}>
         <div className="form-group">
           <label>Email:</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
-        <button type="submit">Enviar Link</button>
+        <button type="submit">Enviar Link de recuperação</button>
       </form>
       <div className="links">
         <Link to="/">Voltar para o Login</Link>
