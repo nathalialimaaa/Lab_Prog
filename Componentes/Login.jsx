@@ -22,7 +22,7 @@ const Login = () => {
         <h1>Integra OS</h1>
         <div className="input-field">
           <input
-            type="text"
+            type="email"
             placeholder="E-mail"
             required
             value={username}

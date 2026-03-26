@@ -57,7 +57,35 @@
     color: #fff;
 }
 
-.recall-forget a {
-    color: #fff;
+.recall-forget a,
+.signup-link p a {
+    color: hsl(197, 100%, 75%);
     text-decoration: none;
+}
+
+.recall-forget a:hover,
+.signup-link p a:hover {
+    text-decoration: underline;
+}
+
+.container button {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    /*aparecer o ponteiro do mouse*/
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.container .signup-link {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 10px;
+    color: #fff;
 }
