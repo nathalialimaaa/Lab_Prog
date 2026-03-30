@@ -1,0 +1,35 @@
+/* src/pages/VerificarCodigo/VerificarCodigo.css */
+/* O componente importa o css do Esqueci a senha, então adicionei aqui apenas os estilos das caixinhas */
+
+.codigo-input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.codigo-input-container input {
+    width: 50px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.codigo-input-container input:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.codigo-input-container input.valid-digit {
+    border-color: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    background-color: rgba(16, 185, 129, 0.1);
+}

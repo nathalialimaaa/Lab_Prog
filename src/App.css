@@ -5,10 +5,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  text-shadow: #000 1px 1px;
+  /* Removido o text-shadow para um visual mais limpo e moderno */
 }
 
-.App {
+.auth-layout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,4 +16,9 @@
   background: url("assets/Gemini_Generated_Image_hbqptbhbqptbhbqp.png") no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100vw;
+}
+
+.App {
+  min-height: 100vh;
 }

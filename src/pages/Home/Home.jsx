@@ -41,10 +41,12 @@ const Home = () => {
                 <span>Dashboard</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiPackage className="menu-icon" />
-              <span>Prontas para Entrega</span>
-            </li>
+            <Link to="/prontas-entrega" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiPackage className="menu-icon" />
+                <span>Prontas para Entrega</span>
+              </li>
+            </Link>
             <Link to="/nova-os" style={{ textDecoration: 'none' }}>
               <li className="menu-item">
                 <FiPlusCircle className="menu-icon" />

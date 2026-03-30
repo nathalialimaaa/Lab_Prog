@@ -2,8 +2,11 @@
 
 .nova-os-container {
   padding: 32px 40px;
-  max-width: 1200px;
+  max-width: 1400px; /* Igual prontas-entrega */
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .nova-os-header {
@@ -29,19 +32,30 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1;
+}
+
+/* Nova Caixa Branca Inteiriça que ocupa toda a tela */
+.form-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 180px); /* Preenche toda a tela uniformemente */
 }
 
 .form-grid-2-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 32px; /* Aumentado um pouco o espaço para o cartão grande */
 }
 
 .form-panel {
-  background-color: var(--bg-card);
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  /* Removido o fundo branco individual; agora eles flutuam no form-card pai */
+  padding: 0 0 16px 0;
 }
 
 .panel-title {
@@ -124,7 +138,9 @@
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: auto; /* Empurra o botão pro rodapé total do Card Branco */
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
 }
 
 .btn-primary {

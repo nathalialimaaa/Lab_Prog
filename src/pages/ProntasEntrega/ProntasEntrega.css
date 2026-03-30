@@ -1,0 +1,255 @@
+/* src/pages/ProntasEntrega/ProntasEntrega.css */
+
+.prontas-container {
+  padding: 32px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.prontas-header-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.prontas-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.prontas-title-row h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.title-icon-box {
+  font-size: 24px;
+  color: #475569; /* Cinza escuro/azul */
+}
+
+/* Barra de pesquisa (Fora do card e sozinha) */
+.search-box-out {
+  width: 450px;
+}
+
+.search-box-out input {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #f1f5f9; /* fundo levemente cinza do print */
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #1e293b;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.search-box-out input::placeholder {
+  color: #94a3b8;
+}
+
+.search-box-out input:focus {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+/* Card da tabela */
+.table-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  height: 700px; /* TOTALMENTE FIXO E ESTÁTICO PARA A CAIXA NÃO PULAR NUNCA */
+}
+
+.table-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  padding: 24px 24px 16px 24px;
+  margin: 0;
+}
+
+/* Tabela de OS */
+.os-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.os-table th {
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.os-table td {
+  padding: 16px 24px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.os-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Transições Suaves da Tabela */
+.os-row {
+  transition: all 0.4s ease-in-out; 
+  opacity: 1;
+}
+
+.os-row.hide-row {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.os-row.hide-row td {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.os-row.hide-row td * {
+  display: none;
+  opacity: 0;
+}
+
+/* Coluna Tempo no Status e Progress Bar */
+.time-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-text {
+  font-weight: 600;
+  width: 45px;
+}
+
+.time-green { color: #10b981; }
+.time-yellow { color: #eab308; }
+.time-red { color: #ef4444; }
+
+.time-progress-container {
+  width: 50px;
+  height: 4px;
+  background-color: #f1f5f9;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.time-progress-bar {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.bar-green { background-color: #10b981; }
+.bar-yellow { background-color: #eab308; }
+.bar-red { background-color: #ef4444; }
+
+.time-meta {
+  font-size: 12px;
+  color: #64748b;
+  width: 25px;
+}
+
+/* Tag de Status */
+.status-badge-green {
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Botão Ver */
+.actions-cell {
+  text-align: center;
+}
+
+.btn-table-action {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-table-action:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Footer / Paginação */
+.table-footer {
+  padding: 16px 24px;
+  color: #64748b;
+  font-size: 13px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto; /* Alinha o footer sempre na parte inferior do card */
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-pagination {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #475569;
+  background-color: #fff;
+  outline: none;
+}
+
+.pagination-count {
+  margin-left: 4px;
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+.font-bold { font-weight: 600; color: #1e293b; }
+.text-red { color: #ef4444; }
+.warning-icon { font-size: 16px; margin-left: -4px; }
+
+.empty-state {
+  padding: 40px !important;
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 900px) {
+  .search-box-out {
+    width: 100%;
+  }
+
+  .os-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

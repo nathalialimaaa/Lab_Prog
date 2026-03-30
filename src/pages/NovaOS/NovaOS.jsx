@@ -81,10 +81,12 @@ const NovaOS = () => {
                 <span>Dashboard</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiPackage className="menu-icon" />
-              <span>Prontas para Entrega</span>
-            </li>
+            <Link to="/prontas-entrega" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiPackage className="menu-icon" />
+                <span>Prontas para Entrega</span>
+              </li>
+            </Link>
             {/* Item ativo agora é o Nova OS */}
             <Link to="/nova-os" style={{ textDecoration: 'none' }}>
               <li className="menu-item active">
@@ -137,7 +139,7 @@ const NovaOS = () => {
       </aside>
 
       {/* Main Content - Conteúdo Principal */}
-      <main className="main-content">
+      <main className="main-content" style={{ backgroundColor: '#f9fafb' }}>
         <header className="top-header">
           <div className="search-bar-mock">
             <div className="url-mock">
@@ -165,7 +167,8 @@ const NovaOS = () => {
             <h1>Nova Ordem de Servico</h1>
           </div>
 
-          <form className="nova-os-form" onSubmit={handleSubmit}>
+          <div className="form-card">
+            <form className="nova-os-form" onSubmit={handleSubmit}>
             <div className="form-grid-2-cols">
               
               {/* Painel Esquerdo: Cliente e Contato */}
@@ -298,6 +301,7 @@ const NovaOS = () => {
               <button type="submit" className="btn-primary">Criar OS</button>
             </div>
           </form>
+          </div>
         </div>
       </main>
     </div>
