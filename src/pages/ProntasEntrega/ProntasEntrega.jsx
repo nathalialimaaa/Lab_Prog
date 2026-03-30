@@ -83,7 +83,12 @@ const ProntasEntrega = () => {
                 <span>Todas as OS</span>
               </li>
             </Link>
-            <li className="menu-item"><FiFileText className="menu-icon" /><span>Orçamentos</span></li>
+            <Link to="/orcamentos" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiFileText className="menu-icon" />
+                <span>Orçamentos</span>
+              </li>
+            </Link>
             <li className="menu-item"><FiDollarSign className="menu-icon" /><span>Empréstimos</span></li>
             <li className="menu-item"><FiUsers className="menu-icon" /><span>Clientes</span></li>
           </ul>

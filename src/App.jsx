@@ -7,6 +7,7 @@ import NovaOS from './pages/NovaOS/NovaOS';
 import ProntasEntrega from './pages/ProntasEntrega/ProntasEntrega';
 import DetalhesOS from './pages/DetalhesOS/DetalhesOS';
 import TodasOS from './pages/TodasOS/TodasOS';
+import Orcamento from './pages/Orcamento/Orcamento';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -31,6 +32,7 @@ function App() {
               <Route path="/nova-os" element={<ProtectedRoute><NovaOS /></ProtectedRoute>} />
               <Route path="/prontas-entrega" element={<ProtectedRoute><ProntasEntrega /></ProtectedRoute>} />
               <Route path="/todas-os" element={<ProtectedRoute><TodasOS /></ProtectedRoute>} />
+              <Route path="/orcamentos" element={<ProtectedRoute><Orcamento /></ProtectedRoute>} />
               <Route path="/os/:id" element={<ProtectedRoute><DetalhesOS /></ProtectedRoute>} />
             </Routes>
           </div>
