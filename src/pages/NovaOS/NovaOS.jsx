@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import {
   FiGrid, FiPackage, FiPlusCircle, FiList, FiFileText, FiDollarSign, FiUsers,
-  FiBriefcase, FiLogOut, FiMoon, FiBell, FiSettings
+  FiBriefcase, FiLogOut, FiMoon, FiSun, FiBell, FiSettings
 } from 'react-icons/fi';
 import './NovaOS.css';
 import '../Home/Home.css'; // Reaproveitando os estilos do layout principal
 
 const NovaOS = () => {
   const { logout } = useContext(AuthContext);
+  const { isDark, toggleTheme } = useTheme();
 
   // Simulando dados do usuário logado
   const user = {
@@ -130,7 +132,13 @@ const NovaOS = () => {
             </div>
           </div>
           <div className="theme-logout">
-            <FiMoon className="footer-icon" />
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle-btn"
+              title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+            >
+              {isDark ? <FiSun className="footer-icon" /> : <FiMoon className="footer-icon" />}
+            </button>
             <button onClick={logout} className="logout-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
               <FiLogOut className="footer-icon" />
             </button>

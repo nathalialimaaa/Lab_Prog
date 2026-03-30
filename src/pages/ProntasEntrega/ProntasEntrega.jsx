@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import {
   FiGrid, FiPackage, FiPlusCircle, FiList, FiFileText, FiDollarSign, FiUsers,
-  FiBriefcase, FiLogOut, FiMoon, FiBell, FiSettings, FiSearch
+  FiBriefcase, FiLogOut, FiMoon, FiSun, FiBell, FiSettings, FiSearch
 } from 'react-icons/fi';
 import { BsBoxSeam } from 'react-icons/bs';
 import { AiOutlineWarning } from 'react-icons/ai'; // Ícone de alerta
@@ -12,6 +13,7 @@ import '../Home/Home.css';
 
 const ProntasEntrega = () => {
   const { logout } = useContext(AuthContext);
+  const { isDark, toggleTheme } = useTheme();
   const [ordens, setOrdens] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -96,7 +98,13 @@ const ProntasEntrega = () => {
             </div>
           </div>
           <div className="theme-logout">
-            <FiMoon className="footer-icon" />
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle-btn"
+              title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+            >
+              {isDark ? <FiSun className="footer-icon" /> : <FiMoon className="footer-icon" />}
+            </button>
             <button onClick={logout} className="logout-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
               <FiLogOut className="footer-icon" />
             </button>
