@@ -77,7 +77,12 @@ const ProntasEntrega = () => {
                 <span>Nova OS</span>
               </li>
             </Link>
-            <li className="menu-item"><FiList className="menu-icon" /><span>Todas as OS</span></li>
+            <Link to="/todas-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiList className="menu-icon" />
+                <span>Todas as OS</span>
+              </li>
+            </Link>
             <li className="menu-item"><FiFileText className="menu-icon" /><span>Orçamentos</span></li>
             <li className="menu-item"><FiDollarSign className="menu-icon" /><span>Empréstimos</span></li>
             <li className="menu-item"><FiUsers className="menu-icon" /><span>Clientes</span></li>
@@ -113,7 +118,7 @@ const ProntasEntrega = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="main-content" style={{ backgroundColor: '#f9fafb' }}>
+      <main className="main-content">
         <header className="top-header">
           <div className="search-bar-mock">
             <div className="url-mock">

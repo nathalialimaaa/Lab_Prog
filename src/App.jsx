@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import NovaOS from './pages/NovaOS/NovaOS';
 import ProntasEntrega from './pages/ProntasEntrega/ProntasEntrega';
 import DetalhesOS from './pages/DetalhesOS/DetalhesOS';
+import TodasOS from './pages/TodasOS/TodasOS';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
               <Route path="/nova-os" element={<ProtectedRoute><NovaOS /></ProtectedRoute>} />
               <Route path="/prontas-entrega" element={<ProtectedRoute><ProntasEntrega /></ProtectedRoute>} />
+              <Route path="/todas-os" element={<ProtectedRoute><TodasOS /></ProtectedRoute>} />
               <Route path="/os/:id" element={<ProtectedRoute><DetalhesOS /></ProtectedRoute>} />
             </Routes>
           </div>

@@ -55,10 +55,12 @@ const Home = () => {
                 <span>Nova OS</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiList className="menu-icon" />
-              <span>Todas as OS</span>
-            </li>
+            <Link to="/todas-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiList className="menu-icon" />
+                <span>Todas as OS</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiFileText className="menu-icon" />
               <span>Orçamentos</span>

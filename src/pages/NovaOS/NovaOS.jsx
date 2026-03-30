@@ -96,10 +96,12 @@ const NovaOS = () => {
                 <span>Nova OS</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiList className="menu-icon" />
-              <span>Todas as OS</span>
-            </li>
+            <Link to="/todas-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiList className="menu-icon" />
+                <span>Todas as OS</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiFileText className="menu-icon" />
               <span>Orçamentos</span>
@@ -147,7 +149,7 @@ const NovaOS = () => {
       </aside>
 
       {/* Main Content - Conteúdo Principal */}
-      <main className="main-content" style={{ backgroundColor: '#f9fafb' }}>
+      <main className="main-content">
         <header className="top-header">
           <div className="search-bar-mock">
             <div className="url-mock">

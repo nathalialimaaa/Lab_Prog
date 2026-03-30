@@ -5,6 +5,7 @@
   --bg-main: #f3f5f9;
   --bg-sidebar: #ffffff;
   --bg-card: #ffffff;
+  --bg-input: #f8fafc;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
@@ -14,17 +15,19 @@
   --danger-color: #ef4444;
 }
 
+/* Modo escuro: sidebar/fundo escuros, cards sempre brancos e legíveis */
 [data-theme="dark"] {
-  --bg-main: #0f172a;
+  --bg-main: #eef2f7;
   --bg-sidebar: #1e293b;
-  --bg-card: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --border-color: #334155;
-  --primary-color: #60a5fa;
-  --hover-color: #334155;
-  --danger-color: #f87171;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --primary-color: #2563eb;
+  --hover-color: #f1f5f9;
+  --danger-color: #ef4444;
 }
 
 body {
@@ -38,6 +41,58 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--bg-main);
+}
+
+/* Sidebar escura no dark mode com texto legível */
+[data-theme="dark"] .sidebar {
+  background-color: #1e293b;
+  border-right-color: #334155;
+}
+
+[data-theme="dark"] .sidebar-header {
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .sidebar-footer {
+  border-top-color: #334155;
+}
+
+[data-theme="dark"] .logo,
+[data-theme="dark"] .user-name {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .logo-icon {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .logo-subtext,
+[data-theme="dark"] .user-role,
+[data-theme="dark"] .menu-label {
+  color: #64748b;
+}
+
+[data-theme="dark"] .menu-item {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .menu-item:hover {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .menu-item.active {
+  background-color: #334155;
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .theme-logout,
+[data-theme="dark"] .logout-link {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .footer-icon:hover {
+  color: #f1f5f9;
 }
 
 /* Sidebar Styles */
