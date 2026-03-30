@@ -31,6 +31,9 @@ const NovaOS = () => {
     problemaRelatado: ''
   });
 
+  // Estado para mensagem de sucesso
+  const [successMsg, setSuccessMsg] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -39,7 +42,21 @@ const NovaOS = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("OS Criada com os dados:", formData);
-    alert("Ordem de Serviço criada com sucesso!");
+    
+    // Substituindo o alert nativo por uma mensagem customizada
+    setSuccessMsg("Ordem de Serviço criada com sucesso!");
+    
+    // Limpar formulário (opcional)
+    setFormData({
+      cliente: '', nomeContato: '', emailContato: '', telefoneContato: '',
+      tipoEquipamento: '', marca: '', modelo: '', numeroSerie: '', problemaRelatado: ''
+    });
+
+    // Oculta a mensagem depois de 4 segundos
+    setTimeout(() => {
+      setSuccessMsg('');
+    }, 4000);
+    
     // Aqui você faria a integração com o backend (axios.post, fetch, etc)
   };
 
@@ -132,6 +149,14 @@ const NovaOS = () => {
             <FiSettings className="action-icon" />
           </div>
         </header>
+
+        {/* Notificação de Sucesso */}
+        {successMsg && (
+          <div className="toast-success">
+            <FiBell className="toast-icon" />
+            <span>{successMsg}</span>
+          </div>
+        )}
 
         {/* Área do Formulário da Nova OS */}
         <div className="dashboard-container nova-os-container">
