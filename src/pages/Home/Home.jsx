@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import {
   FiGrid, FiPackage, FiPlusCircle, FiList, FiFileText, FiDollarSign, FiUsers,
-  FiBriefcase, FiLogOut, FiMoon, FiBell, FiSettings, FiChevronDown
+  FiBriefcase, FiLogOut, FiMoon, FiSun, FiBell, FiSettings, FiChevronDown
 } from 'react-icons/fi';
 import { BsBoxSeam } from 'react-icons/bs';
 import { MdOutlinePrecisionManufacturing, MdOutlineHardware } from 'react-icons/md';
@@ -11,6 +12,7 @@ import './Home.css';
 
 const Home = () => {
   const { logout } = useContext(AuthContext);
+  const { isDark, toggleTheme } = useTheme();
 
   // Esse objeto "user" é onde você colocará os dados que vierem do banco de dados/login.
   // Pode vir do LocalStorage, de um Context API ou props.
@@ -53,14 +55,18 @@ const Home = () => {
                 <span>Nova OS</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiList className="menu-icon" />
-              <span>Todas as OS</span>
-            </li>
-            <li className="menu-item">
-              <FiFileText className="menu-icon" />
-              <span>Orçamentos</span>
-            </li>
+            <Link to="/todas-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiList className="menu-icon" />
+                <span>Todas as OS</span>
+              </li>
+            </Link>
+            <Link to="/orcamentos" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiFileText className="menu-icon" />
+                <span>Orçamentos</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiDollarSign className="menu-icon" />
               <span>Empréstimos</span>
@@ -89,7 +95,13 @@ const Home = () => {
             </div>
           </div>
           <div className="theme-logout">
-            <FiMoon className="footer-icon" />
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle-btn"
+              title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+            >
+              {isDark ? <FiSun className="footer-icon" /> : <FiMoon className="footer-icon" />}
+            </button>
             <button onClick={logout} className="logout-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
               <FiLogOut className="footer-icon" />
             </button>

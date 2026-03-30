@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import {
   FiGrid, FiPackage, FiPlusCircle, FiList, FiFileText, FiDollarSign, FiUsers,
-  FiBriefcase, FiLogOut, FiMoon, FiBell, FiSettings
+  FiBriefcase, FiLogOut, FiMoon, FiSun, FiBell, FiSettings
 } from 'react-icons/fi';
 import './NovaOS.css';
 import '../Home/Home.css'; // Reaproveitando os estilos do layout principal
 
 const NovaOS = () => {
   const { logout } = useContext(AuthContext);
+  const { isDark, toggleTheme } = useTheme();
 
   // Simulando dados do usuário logado
   const user = {
@@ -94,14 +96,18 @@ const NovaOS = () => {
                 <span>Nova OS</span>
               </li>
             </Link>
-            <li className="menu-item">
-              <FiList className="menu-icon" />
-              <span>Todas as OS</span>
-            </li>
-            <li className="menu-item">
-              <FiFileText className="menu-icon" />
-              <span>Orçamentos</span>
-            </li>
+            <Link to="/todas-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiList className="menu-icon" />
+                <span>Todas as OS</span>
+              </li>
+            </Link>
+            <Link to="/orcamentos" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiFileText className="menu-icon" />
+                <span>Orçamentos</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiDollarSign className="menu-icon" />
               <span>Empréstimos</span>
@@ -130,7 +136,13 @@ const NovaOS = () => {
             </div>
           </div>
           <div className="theme-logout">
-            <FiMoon className="footer-icon" />
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle-btn"
+              title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+            >
+              {isDark ? <FiSun className="footer-icon" /> : <FiMoon className="footer-icon" />}
+            </button>
             <button onClick={logout} className="logout-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
               <FiLogOut className="footer-icon" />
             </button>
@@ -139,7 +151,7 @@ const NovaOS = () => {
       </aside>
 
       {/* Main Content - Conteúdo Principal */}
-      <main className="main-content" style={{ backgroundColor: '#f9fafb' }}>
+      <main className="main-content">
         <header className="top-header">
           <div className="search-bar-mock">
             <div className="url-mock">
