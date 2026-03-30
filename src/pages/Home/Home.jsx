@@ -35,18 +35,22 @@ const Home = () => {
         <div className="sidebar-menu">
           <p className="menu-label">PRINCIPAL</p>
           <ul className="menu-list">
-            <li className="menu-item active">
-              <FiGrid className="menu-icon" />
-              <span>Dashboard</span>
-            </li>
+            <Link to="/home" style={{ textDecoration: 'none' }}>
+              <li className="menu-item active">
+                <FiGrid className="menu-icon" />
+                <span>Dashboard</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiPackage className="menu-icon" />
               <span>Prontas para Entrega</span>
             </li>
-            <li className="menu-item">
-              <FiPlusCircle className="menu-icon" />
-              <span>Nova OS</span>
-            </li>
+            <Link to="/nova-os" style={{ textDecoration: 'none' }}>
+              <li className="menu-item">
+                <FiPlusCircle className="menu-icon" />
+                <span>Nova OS</span>
+              </li>
+            </Link>
             <li className="menu-item">
               <FiList className="menu-icon" />
               <span>Todas as OS</span>
