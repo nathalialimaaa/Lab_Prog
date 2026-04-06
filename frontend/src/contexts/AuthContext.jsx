@@ -18,35 +18,28 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = async (username, password) => {
-    try {
-      /* 
-      // ===== IMPLEMENTAÇÃO REAL COM BACKEND =====
-      const response = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: username, password }),
-      });
-      
-      if (!response.ok) throw new Error("Credenciais inválidas");
-      const data = await response.json();
-      */
+const login = async (email, password) => {
+  try {
+    const response = await fetch("http://localhost:8081/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-      // ===== SIMULAÇÃO DE LOGIN (Remover depois de integrar o backend) =====
-      console.log("Validando:", username, password);
-      const data = { token: "seu_token_jwt_simulado_aqui" };
-      // ======================================================================
-
-      if (data.token) {
-        localStorage.setItem("token", data.token); // Salva o token no localStorage
-        setUser({ token: data.token });           // Atualiza o estado
-        navigate("/home");                        // Redireciona para a home
-      }
-    } catch (error) {
-      console.error("Erro no login:", error);
-      alert("Erro ao fazer login. Verifique suas credenciais.");
+    if (!response.ok) {
+      throw new Error("Credenciais inválidas");
     }
-  };
+
+    const data = await response.json();
+
+    localStorage.setItem("token", data.token);
+    setUser({ email, token: data.token });
+    navigate("/dashboard");
+  } catch (error) {
+    console.error("Erro no login:", error);
+    alert("Erro ao fazer login. Verifique suas credenciais.");
+  }
+};
 
   const logout = () => {
     localStorage.removeItem("token");

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Lab_Prog.iml" filepath="$PROJECT_DIR$/.idea/Lab_Prog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controleos.main.iml" filepath="$PROJECT_DIR$/.idea/modules/controleos.main.iml" />
     </modules>
   </component>
 </project>

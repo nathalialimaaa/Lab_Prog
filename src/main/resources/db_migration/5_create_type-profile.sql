@@ -1,0 +1,1 @@
+CREATE TYPE profile AS ENUM ('admin', 'analista');

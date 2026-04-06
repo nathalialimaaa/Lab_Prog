@@ -1,0 +1,1 @@
+CREATE TYPE statusOss AS ENUM ('aguardando analise', 'em analise', 'finalizado');
